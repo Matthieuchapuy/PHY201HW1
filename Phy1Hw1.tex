@@ -49,15 +49,35 @@ with $a$ the component of the acceleration in the direction of the bar. However 
 
 \subsection{} % Exercise 1.3
 
-In order to write the oscillator equation of the system, we will use the standard oscillator equation, including $x_f(t)$. This is written as:
+In order to write the oscillator equation of the system, we will consider the motion of the mass in the direction of the $x$-axis. From our definition of the $x$ position of the particle in \textbf{1.1}, we can derive twice to obtain the acceleration of the particle in the $x$-direction, $\ddot{x} = \ddot{x}_f + l \ddot{\theta}$.\\
+
+\noindent By considering the forces on the mass, we get that:
 \begin{align*}
-	\frac{d^2\theta}{dt^2} + \frac{d\theta}{dt}
+	-F_{bar}sin\theta - \eta \dot{x} = ma\\
+	-mg\,sin\theta - \eta \dot{x} = m( \ddot{x}_f + l \ddot{\theta})\\
+	-g\,sin\theta - \frac{\eta}{m} \dot{x} = -\omega^2x_0sin \omega t + l \ddot{\theta}
+\end{align*}
+From this we can write our oscillator equation:
+\begin{align*}
+	 \frac{d^2 \theta}{dt^2} + \frac{\eta}{m}\frac{d \theta}{dt} + \frac{g}{l}\theta  = -\frac{\omega^2}{l}x_0sin\omega t 
 \end{align*}
 
 \subsection{} % Exercise 1.4
 
-
-
+Replacing the expression of $x_f(t)$ by it's complex equivalent, we get the equation:
+\begin{align*}
+	\frac{d^2 \theta}{dt^2} + \frac{\eta}{m}\frac{d \theta}{dt} + \frac{g}{l}\theta  = -i\frac{\omega^2}{l}x_0e^{i \omega t} 
+\end{align*}
+We then consider a solution of  type $\theta = \Theta e^{i \omega t}$.\\
+By inserting this into the equation above, we get:
+\begin{align*}
+	\omega^2\Theta e^{i \omega t} - i\frac{\eta \omega}{m}\Theta e^{i \omega t} - \frac{g}{l}\Theta e^{i \omega t} = i\frac{\omega^2}{l}x_0e^{i \omega t}
+\end{align*}
+We therfore get
+\begin{align*}
+	\Theta &= \frac{i \frac{\omega^2}{l}x_0}{-\omega^2 - i\frac{\eta \omega}{m} - \frac{g}{l}}
+	&=
+\end{align*}
 \subsection{} % Exercise 1.5
 
 
