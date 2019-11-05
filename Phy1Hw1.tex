@@ -27,8 +27,14 @@
 
 \subsection{} % Exercise 1.1
 
-
-
+Under normal assumptions, we would write the position of the pendulum as:
+\begin{align*}
+	\left( \begin{matrix} x \\ z \end{matrix} \right) = \left( \begin{matrix}x_f +  l\, sin\theta \\ -l\, cos\theta \end{matrix} \right)
+\end{align*}
+However for $\theta \ll 1$, we can use the taylor series of the trigonometric functions to approximate $cos\theta \approx 1$ and $sin\theta \approx \theta$. We therefore have:
+\begin{align*}
+	\left( \begin{matrix} x \\ z \end{matrix} \right) = \left( \begin{matrix}x_f +  l\theta \\ -l \end{matrix} \right)
+\end{align*}
 \subsection{} % Exercise 1.2
 
 
