@@ -100,7 +100,7 @@ We will consider the 0 gravitational potential point to be at the level of the p
 \begin{align*}y
 	\mathcal{L} &= E_{K} - E_P\\
 	\mathcal{L}(z,\dot{z},t) &= \frac{1}{2}(m_1+m_2)\dot{z}^2 - g(m_1z + m_2(l-z)sin\,\alpha)\\
-	&= \frac{1}{2}(m_1+m_2)\dot{z}^2 - (m_1 - m_2sin\,\alpha)g z - m_2 l sin(\alpha)
+	&= \frac{1}{2}(m_1+m_2)\dot{z}^2 - (m_2sin\,\alpha - m_1)g z - m_2 g l sin(\alpha)
 \end{align*}
 
 \subsection{} % Exercise 2.3
@@ -108,17 +108,17 @@ We will consider the 0 gravitational potential point to be at the level of the p
 We consider the Euler-Lagrange equation:
 \begin{align*}
 	\frac{\partial \mathcal{L}}{\partial z} &= \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{z}}\\
-	 (m_1 - m_2sin\,\alpha)g &= \frac{d}{dt}(m_1 + m_2)\dot{z}\\
-	 (m_1 - m_2sin\,\alpha)g &= (m_1 + m_2)\ddot{z}
+	 (m_2sin\,\alpha - m_1)g &= \frac{d}{dt}(m_1 + m_2)\dot{z}\\
+	 (m_2sin\,\alpha - m_1)g &= (m_1 + m_2)\ddot{z}
 \end{align*}
 
 \subsection{} % Exercise 2.4
 
 From the Euler-Lagrange equation gives us that:
 \begin{align*}
-	\ddot{z} = \frac{ m_1g - m_2gsin\,\alpha}{m_1 + m_2}
+	\ddot{z} = \frac{ m_2gsin\,\alpha  - m_1}{m_1 + m_2}
 \end{align*}
-In order to have equilibrium, we need $\ddot{z} = 0$. This can only be obtianed if $m_2sin\,\alpha = m_1$. Since $sin\,\alpha \leq 1$, This is possible if $m_2 > m_1$ but impossible if $m_2 < m_1$.
+In order to have equilibrium, we need $\ddot{z} = 0$. This can only be obtained if $m_2sin\,\alpha = m_1$. Since $sin\,\alpha \leq 1$, This is possible if $m_2 > m_1$ but impossible if $m_2 < m_1$.
 
 \section{Suspended Bar}
 
@@ -169,7 +169,7 @@ Defining $\tilde{r} = r - r_0 \ll 1$, we have $\dot{\tilde{r}} = \dot{r}$. We wi
 Since $\tilde{r} \ll 1$, we can neglect the second and third term, leaving us with $r^2 \approx r_0^2$.\\
 With $\theta \ll 1$, we have that $cos\,\theta = 1 - \frac{\theta}{2}$. We therefore re-write the equation above with these considerations.
 \begin{align*}
-	L &\approx \frac{1}{2}m(\dot{\tilde{r}}^2 + r_0^2\dot{\theta}^2) + mg(r(1- \frac{\theta}{2})- r_0) - \frac{1}{2}k\tilde{r}^2\\
+	L &\approx \frac{1}{2}m(\dot{\tilde{r}}^2 + r_0^2\dot{\theta}^2) + mg(r(1- \frac{\theta^2}{2})- r_0) - \frac{1}{2}k\tilde{r}^2\\
 	&\approx \frac{1}{2}m(\dot{\tilde{r}}^2 + r_0^2\dot{\theta}^2)  - \frac{1}{2}k\tilde{r}^2 +mg\tilde{r} - \frac{1}{2}mgr_0\theta^2
 \end{align*}
 
@@ -202,14 +202,74 @@ The system has three degrees of freedom, vertical, horizontal, and rotational in
 
 \subsubsection{} % Exercise 3.2.2
 
-
+We consider the holonomic constraint by separating the horizontal and vertical components of the distance between the two masses:
+\begin{align*}
+	L_H^2 + L_V^2 &= (r_2\,cos\,\theta_2 - r_1 \, cos \,\theta_1)^2 + (r_2\,sin\,\theta_2 - r_1\,sin\,\theta_1 + L)^2\\
+	&= r_2^2 (cos^2\theta_2 + sin^2 \theta_2) + r_1^2(cos^2\theta_1 + sin^2 \theta_1) +L^2 + 2L(r_2\,sin\,\theta_2 - r_1\,sin\,\theta_1)\\ & \quad - 2r_1r_2(cos\,\theta_2\,cos\,\theta_1 + sin\,\theta_2\,sin\,\theta_1)
+\end{align*}
+By using trigonometric identities, we can re-write this as:
+\begin{align*}
+	L_H^2 + L_V^2 &=r_2^2+r_1^2 - 2r_1r_2cos(\theta_1 - \theta_2) + 2L(r_2\,sin\,\theta_2 - r_1\,sin\,\theta_1) + L^2
+\end{align*}
+We then simp[lify using the small angle approximations.
+\begin{align*}
+	L_H^2 + L_V^2 &= (\tilde{r}_1 -\tilde{r}_2)^2 - 2(r_0+\tilde{r}_1)(r_0 + \tilde{r}_2)(1 - 1 - \frac{(\theta_1 - \theta_2)^2}{2})\\ &\quad + 2L\big((r_0 + \tilde{r}_2)\theta_2 - (r_0 + \tilde{r}_1)\theta_1 \big) + L^2\\
+ &= (\tilde{r}_1 -\tilde{r}_2)^2 + 2Lr_0(\theta_2 - \theta_1) + (r_0 + \tilde{r}_1)(r_0 + \tilde{r}_2)(\theta_2^2 -2\theta_1\theta_2 + \theta_1^2) +L^2\\
+&=  (\tilde{r}_1 -\tilde{r}_2)^2 + 2Lr_0(\theta_2 - \theta_1) + r_0^2(\theta_2 - \theta_1)^2 + L^2
+\end{align*}
+But we know that $L_H^2 + L_V^2 = L^2$, therefore:
+\begin{align*}
+	(\tilde{r}_1 -\tilde{r}_2)^2 + 2Lr_0(\theta_2 - \theta_1) + r_0^2(\theta_2 - \theta_1)^2 = 0
+\end{align*}
 
 \subsubsection{} % Exercise 3.2.3
 
+We first consider the potential energies:
+\begin{align*}
+	V_{tot} = \frac{1}{2}k\tilde{r}_1^2 + \frac{1}{2}k\tilde{r}_2^2 + \frac{mgr_0}{2}(\theta_1^2 + \theta^2_2) - mg(\tilde{r}_1 + \tilde{r}_2)
+\end{align*}
+We now consider the kinetic energy:
+\begin{align*}
+	T = \frac{1}{2}m(\dot{\tilde{r}}_1^2 + \dot{\tilde{r}}_2^2 + r_0^2(\dot{\theta}_1^2 + \dot{\theta}_2^2))
+\end{align*}
+We therefore write the Lagrangian as:
+\begin{align*}
+	\mathcal{L} = \frac{1}{2}m(\dot{\tilde{r}}_1^2 + \dot{\tilde{r}}_2^2 + r_0^2(\dot{\theta}_1^2 + \dot{\theta}_2^2)) - \frac{1}{2}k\tilde{r}_1^2 + \frac{1}{2}k\tilde{r}_2^2 + \frac{mgr_0}{2}(\theta_1^2 + \theta^2_2) - mg(\tilde{r}_1 + \tilde{r}_2)
+\end{align*}
 
-
+We know write the Euler Lagrange equations with $f =  (\tilde{r}_1 -\tilde{r}_2)^2 + 2Lr_0(\theta_2 - \theta_1) + r_0^2(\theta_2 - \theta_1)^2 = 0$.
+\begin{align*}
+	\frac{\partial L}{\partial \tilde{r}_1} + \lambda\frac{\partial f}{\partial \tilde{r}_1} &= \frac{d}{dt}\frac{\partial L}{\partial \dot{\tilde{r}}_1}\\
+	-k\tilde{r}_1 + mg + 2\lambda(\tilde{r}_1 - \tilde{r}_2) = m\ddot{\tilde{r}}_1
+\end{align*}
+similarly, we get:
+\begin{align*}
+	-k\tilde{r}_2 + mg + 2\lambda(\tilde{r}_2 - \tilde{r}_1) = m\ddot{\tilde{r}}_2
+\end{align*}
+Using the change of variable $R = \tilde{r}_1 + \tilde{r}_2$, we sum the two equations to get:
+\begin{align*}
+	m\ddot{R} + kR = 2mg
+\end{align*}
+We now consider the same for $\theta$:
+\begin{align*}
+	\frac{\partial L}{\partial \theta_1} + \lambda\frac{\partial f}{\partial \theta_1} &= \frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}_1}\\
+	-mgr_0\theta_1 + \lambda(2r_0^2(\theta_1 - \theta_2) - 2Lr_0) &= mr_0^2\ddot{\theta}_1
+\end{align*}
+Similarly
+\begin{align*}
+	-mgr_0\theta_2 + \lambda(2r_0^2(\theta_2 - \theta_1) - 2Lr_0) = mr_0^2\ddot{\theta}_2
+\end{align*}
+Using the change of variable $\Theta = \theta_1 + \theta_2$, we sum the two equations to get:
+\begin{align*}
+	mr_0^2\ddot{\Theta} = -mgr_0\Theta
+\end{align*}
 \subsubsection{} % Exercise 3.2.4
 
+Under first order approximations, the holonomic constraint is:
+\begin{align*}
+	2Lr_0(\theta_2 - \theta_1) = 0
+\end{align*}
+Therefore it is clear that we have $\theta_1 = \theta_2$. Reinjecting this into the second order approximation of the constraint, we also get that $\tilde{r}_1 = \tilde{r}_2$. However for now, we have not been able to prove the third mode. Physically, we see that these three mode correspond to:
 
 
 \end{document}
