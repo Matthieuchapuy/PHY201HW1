@@ -63,27 +63,62 @@ From this we can write our oscillator equation:
 \end{align*}
 
 \subsection{} % Exercise 1.4
+For simplicity, we are going to replace $\frac{\eta}{m}$ by $\gamma$ and $\frac{g}{l}$ by $\omega_0$
+This gives the following expression :
+$$\ddot{\theta} + \gamma\dot{\theta} + \omega_0^2\theta = \frac{\gamma}{l}\omega x_0 cos(\omega t) + \frac{\omega^2}{l}x_0sin(\omega t) $$
+Replacing the expression of $x_f(t)$ by its complex equivalent and searching solutions for $\theta = \Theta e^{i\gamma t}$ we get the equation :
 
-Replacing the expression of $x_f(t)$ by it's complex equivalent, we get the equation:
 \begin{align*}
-	\frac{d^2 \theta}{dt^2} + \frac{\eta}{m}\frac{d \theta}{dt} + \frac{g}{l}\theta  = -i\frac{\omega^2}{l}x_0e^{i \omega t} 
-\end{align*}
-We then consider a solution of  type $\theta = \Theta e^{i \omega t}$.\\
-By inserting this into the equation above, we get:
-\begin{align*}
-	\omega^2\Theta e^{i \omega t} - i\frac{\eta \omega}{m}\Theta e^{i \omega t} - \frac{g}{l}\Theta e^{i \omega t} = i\frac{\omega^2}{l}x_0e^{i \omega t}
-\end{align*}
-We therefore get
-\begin{align*}
-	\Theta &= \frac{i \frac{\omega^2}{l}x_0}{-\omega^2 - i\frac{\eta \omega}{m} - \frac{g}{l}}\\
-	&=
+-\omega^2\Theta e^{i\omega t} + i\gamma \omega \Theta e^{i\omega t} + \omega_0^2\Theta e^{i\omega t} &= \frac{\gamma}{l}\omega x_0 cos(\omega t) + \frac{\omega^2}{l}x_0sin(\omega t) \\
+\Leftrightarrow \Theta ((\omega_0^2 - \omega ^2) + i\gamma \omega) &= \frac{\gamma}{l} \omega x_0 + \frac{\omega^2}{l} ix_0 \\
+\Leftrightarrow \Theta &= \frac{\gamma \omega x_0 + \omega^2 i x_0}{l[(\omega_0^2 - \omega^2) + i\gamma \omega]} \\
+&=\frac{(\gamma \omega x_0 + \omega^2 i x_0)((\omega_0^2-\omega^2)-i\gamma \omega)}{l(\omega_0^2 - \omega^2)^2 + \gamma^2 \omega^2l} \\
+&= \frac{\gamma \omega x_0 (\omega_0^2 - \omega^2) + \omega^3 x_0 \gamma) + i(\omega^2x_0(\omega_0^2-\omega^2) - \gamma^2\omega^2x_0)}{l(\omega_0^2 - \omega^2)^2 + \gamma^2 \omega^2l} \\
 \end{align*}
 
-\subsection{} % Exercise 1.5
+We are going to let this expression as it is for question 1.4, as we it will be simplified in question 1.5
+
+\subsection{} %Exercise 1.5
+
+We now write the magnitude of the transfert function of the system $H(\omega) = \left|\frac{\theta}{x_f}\right|$
+
+We have : 
+
+\begin{align*}
+H(\omega) &= \frac{\theta}{x_p}\\
+&= -i\frac{\Theta}{x_0}\\
+&= \frac{\omega^2-(\omega_0^2 -\omega^2) - \gamma^2\omega^2) - i(\gamma \omega(\omega_0^2-\omega^2)+ \omega^3\gamma)}{l(\omega_0^2 - \omega^2)^2 + \gamma^2\omega^2l} 
+\end{align*}
+
+Taking the modulos it yields : 
+\begin{align*}
+\left|H(\omega)\right| &= \frac{1}{l(\omega_0^2-\omega^2)^2+\gamma^2\omega^2l}\left[(\omega^2(\omega_0^2-\omega^2)-\gamma^2\omega^2)^2 + (\gamma\omega(\omega_0^2-\omega^2+\omega^2\gamma)^2\right]^{\frac{1}{2}} \\
+&= \frac{1}{l(\omega_0^2-\omega^2)^2+\gamma^2\omega^2l}\left[\omega^4(\omega_0^2-\omega^2)^2+\gamma^4\omega^4+\gamma^2\omega^2(\omega_0^2-\omega^2)^2+\omega^6\gamma^2\right]^{\frac{1}{2}} \\
+\end{align*}
+
+In order to study the sign of this expression, we have going to derivate $\left|H(\omega)\right|$ with respect to $\gamma$, this yields :
+
+\begin{align*}
+\frac{d\left|H(\omega)\right|}{d\gamma} &= -\frac{2\gamma \omega^2}{(\omega_0^2-\omega^2)^2 + \gamma^2\omega^2}\left[\omega^4(\omega_0^2-\omega^2)^2+\gamma^4\omega^4+\gamma^2\omega^2(\omega_0^2-\omega^2)^2+\omega^6\gamma^2\right]^{\frac{1}{2}}\\ &+ \frac{1}{l(\omega_0^2-\omega^2)^2+\gamma^2\omega^2l}\frac{2\gamma^3\omega^4+\gamma \omega^2(\omega_0^2-\omega^2)^2+\gamma \omega^6}{\left[\omega^4(\omega_0^2-\omega^2)^2+\gamma^4\omega^4+\gamma^2\omega^2(\omega_0^2-\omega^2)^2+\omega^6\gamma^2\right]^{\frac{1}{2}}}
+\end{align*}
 
 
+But, we know that :
+\begin{align*}
+ & -\frac{2\gamma \omega^2}{(\omega_0^2-\omega^2)^2 + \gamma^2\omega^2}\left[\omega^4(\omega_0^2-\omega^2)^2+\gamma^4\omega^4+\gamma^2\omega^2(\omega_0^2-\omega^2)^2+\omega^6\gamma^2\right]^{\frac{1}{2}}\\
+&\ge  \frac{1}{l(\omega_0^2-\omega^2)^2+\gamma^2\omega^2l}\frac{2\gamma^3\omega^4+\gamma \omega^2(\omega_0^2-\omega^2)^2+\gamma \omega^6}{\left[\omega^4(\omega_0^2-\omega^2)^2+\gamma^4\omega^4+\gamma^2\omega^2(\omega_0^2-\omega^2)^2+\omega^6\gamma^2\right]^{\frac{1}{2}}}
+\end{align*}
 
-\subsection{} % Exercise 1.6
+Hence we have that $\frac{d\left|H(\omega)\right|}{d\gamma} \le 0$.
+Thus as $\eta$ increases, it means that $\left|H(\omega)\right|$ decreases, which confirms our intuition that the amplitude should increases when the friction coefficent is small.
+
+\subsection{} %Exercise 1.6
+
+Taking the limit of the expression we found above at $\eta$ tends to 0 yields :
+$$\lim_{\eta \to 0}\left|H(\omega)\right| = \frac{\omega}{l(\omega_0^2-\omega^2)} $$
+
+Hence this system is not conservative JE VOUS LAISE EXPLIQUER POURQUOI
+
 
 \section{Equilibrium of Two Masses}
 
