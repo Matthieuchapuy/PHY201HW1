@@ -42,7 +42,7 @@ We now consider the forces in the direction of the bar at the point mass. We obs
 \begin{align*}
 	F_{bar} - mg\,cos\theta = ma
 \end{align*}
-with $a$ the component of the acceleration in the direction of the bar. However we know the bar to be rigid, hence $a = 0$, and as established before, over the studied range, $cos\theta = 1$. We can therefore re-write the equaiton above as
+with $a$ the component of the acceleration in the direction of the bar. However we know the bar to be rigid, hence $a = 0$, and as established before, over the studied range, $cos\theta = 1$. We can therefore re-write the equation above as
 \begin{align*}
 	F_{bar} = mg
 \end{align*}
@@ -96,7 +96,8 @@ In order to use $z_1$ as a generalised coordinate for the system, we would have 
 
 \subsection{} % Exercise 2.2
 
-\begin{align*}
+We will consider the 0 gravitational potential point to be at the level of the pulley.
+\begin{align*}y
 	\mathcal{L} &= E_{K} - E_P\\
 	\mathcal{L}(z,\dot{z},t) &= \frac{1}{2}(m_1+m_2)\dot{z}^2 - g(m_1z + m_2(l-z)sin\,\alpha)\\
 	&= \frac{1}{2}(m_1+m_2)\dot{z}^2 - (m_1 - m_2sin\,\alpha)g z - m_2 l sin(\alpha)
@@ -125,36 +126,79 @@ In order to have equilibrium, we need $\ddot{z} = 0$. This can only be obtianed 
 
 \subsubsection{} % Exercise 3.1.1
 
-
+In order to define the gravitaitonal potential $V_g$, we will first define the 0 potential point to be when the pendulum is at rest at $r_0$. We therefore want to find the difference in potential between a given point $(r,\theta)$ and $(r_0,0)$. In order to do this, we project r along the vertical, and take the difference with $r_0$. This yields:
+\begin{align*}
+	V_g &= -mgh\\
+	&= -mg(r\,cos\,\theta - r_0)
+\end{align*}
 
 \subsubsection{} % Exercise 3.1.2
 
-
+We know that the total potential is the sum of the gravitational and elastic potential, we write this as:
+\begin{align*}
+	V &= V_g + V_e\\
+	&=  -mg(r\,cos\,\theta - r_0) + V_e
+\end{align*}
+In order to find the elastic potential, we need the extension of the spring. This is simply $r - r_0$. Therefore
+\begin{align*}
+	V &=  -mg(r\,cos\,\theta - r_0) + \frac{1}{2}k(r-r_0)^2
+\end{align*}
 
 \subsubsection{} % Exercise 3.1.3
 
-
+In order to write the kinetic energy, we need to combine the kinetic energy in $\vec{e_r}$ and $\vec{e}_{\theta}$. We therefore have:
+\begin{align*}
+	E_K &= \frac{1}{2}m\dot{r}^2 + \frac{1}{2}m(r\dot{\theta})^2\\
+	&= \frac{1}{2}m(\dot{r}^2 + r^2\dot{\theta}^2)
+\end{align*}
 
 \subsubsection{} % Exercise 3.1.4
 
-
+\begin{align*}
+	\mathcal{L} &= E_{K} - E_P\\
+	\mathcal{L}(r,\theta,\dot{r},\dot{\theta},t) &= \frac{1}{2}m(\dot{r}^2 + r^2\dot{\theta}^2) + mg(r\,cos\,\theta - r_0) - \frac{1}{2}k(r-r_0)^2
+\end{align*}
 
 \subsubsection{} % Exercise 3.1.5
 
-
+Defining $\tilde{r} = r - r_0 \ll 1$, we have $\dot{\tilde{r}} = \dot{r}$. We will first show that we can say that $r^2 \approx r_0^2$
+\begin{align*}
+	r^2 &= r_0^2 + 2\tilde{r}r_0 + \tilde{r}^2\\
+	&= r_0^2\left( 1 + 2\frac{\tilde{r}}{r} +\frac{\tilde{r}^2}{r_0^2} \right)
+\end{align*}
+Since $\tilde{r} \ll 1$, we can neglect the second and third term, leaving us with $r^2 \approx r_0^2$.\\
+With $\theta \ll 1$, we have that $cos\,\theta = 1 - \frac{\theta}{2}$. We therefore re-write the equation above with these considerations.
+\begin{align*}
+	L &\approx \frac{1}{2}m(\dot{\tilde{r}}^2 + r_0^2\dot{\theta}^2) + mg(r(1- \frac{\theta}{2})- r_0) - \frac{1}{2}k\tilde{r}^2\\
+	&\approx \frac{1}{2}m(\dot{\tilde{r}}^2 + r_0^2\dot{\theta}^2)  - \frac{1}{2}k\tilde{r}^2 +mg\tilde{r} - \frac{1}{2}mgr_0\theta^2
+\end{align*}
 
 \subsubsection{} % Exercise 3.1.6
 
-
-
+We write the Euler-Lagrange for $\tilde{r}$.
+\begin{align*}
+	\frac{\partial L}{\partial \tilde{r}} &= \frac{d}{dt}\frac{\partial L}{\partial \dot{\tilde{r}}}\\
+	mg - k\tilde{r} &= m\ddot{\tilde{r}}
+\end{align*}
+We now do the same for $\theta$.
+\begin{align*}
+	\frac{\partial L}{\partial \theta} &= \frac{d}{dt}\frac{\partial L}{\partial \dot{\theta}}\\
+	-mgr_0\theta &= mr_0^2\ddot{\theta}
+\end{align*}
 \subsubsection{} % Exercise 3.1.7
 
+We write the equations of motion for $\tilde{r}$ and $\theta$.
+\begin{align*}
+	\ddot{\tilde{r}} &= g - \frac{k}{m}\tilde{r}\\
+	\ddot{\theta} &= -\frac{g}{r_0}\theta
+\end{align*}
+We recognise these equations as those of a harmonic oscillator. We therefore have two modes, one for the spring oscillator, and one for the pendulum. The frequency of the spring node is $\frac{1}{2\pi}\sqrt{\frac{g}{r_0}}$, and for the pendulum it is $\frac{1}{2\pi}\sqrt{\frac{k}{m}}$.
 
 \subsection{Connected Masses}
 
 \subsubsection{} % Exercise 3.2.1
 
-
+The system has three degrees of freedom, vertical, horizontal, and rotational in the plane. It has one holonomic constraint, specifically the distance between the two masses is constant, as it is secured by a rigid massless rod.
 
 \subsubsection{} % Exercise 3.2.2
 
