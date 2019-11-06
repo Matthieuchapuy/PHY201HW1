@@ -29,7 +29,7 @@
 
 Under normal assumptions, we would write the position of the pendulum as:
 \begin{align*}
-	\left( \begin{matrix} x \\ z \end{matrix} \right) = \left( \begin{matrix}x_f +  l\, sin\theta \\ -l\, cos\theta \end{matrix} \right)
+	\left( \begin{matrix} x \\ z \end{matrix} \right) = \left( \begin{matrix}x_f +  l\, sin\,\theta \\ -l\, cos\,\theta \end{matrix} \right)
 \end{align*}
 However for $\theta \ll 1$, we can use the Taylor series of the trigonometric functions to approximate $cos\theta \approx 1$ and $sin\theta \approx \theta$. We therefore have:
 \begin{align*}
@@ -40,7 +40,7 @@ However for $\theta \ll 1$, we can use the Taylor series of the trigonometric fu
 
 We now consider the forces in the direction of the bar at the point mass. We observe two forces: the constraint force in the bar, that acts parallel to the bar, and the force due to gravity, that acts straight down. By projecting the force due to gravity along the direction of the bar, we can write the equation
 \begin{align*}
-	F_{bar} - mg\,cos\theta = ma
+	F_{bar} - mg\,cos\,\theta = ma
 \end{align*}
 with $a$ the component of the acceleration in the direction of the bar. However we know the bar to be rigid, hence $a = 0$, and as established before, over the studied range, $cos\theta = 1$. We can therefore re-write the equation above as
 \begin{align*}
@@ -53,13 +53,13 @@ In order to write the oscillator equation of the system, we will consider the mo
 
 \noindent By considering the forces on the mass, we get that:
 \begin{align*}
-	-F_{bar}sin\theta - \eta \dot{x} = ma\\
-	-mg\,sin\theta - \eta \dot{x} = m( \ddot{x}_f + l \ddot{\theta})\\
-	-g\,sin\theta - \frac{\eta}{m} \dot{x} = -\omega^2x_0sin \omega t + l \ddot{\theta}
+	-F_{bar}sin\theta - \eta \dot{x} &= ma\\
+	-mg\,sin\theta - \eta \dot{x} &= m( \ddot{x}_f + l \ddot{\theta})\\
+	-g\,sin\theta - \frac{\eta}{m} (\dot{x}_f + l\dot{\theta}) &= -\omega^2x_0sin \, \omega t + l \ddot{\theta}
 \end{align*}
 From this we can write our oscillator equation:
 \begin{align*}
-	 \frac{d^2 \theta}{dt^2} + \frac{\eta}{m}\frac{d \theta}{dt} + \frac{g}{l}\theta  = -\frac{\omega^2}{l}x_0sin\omega t 
+	 \frac{d^2 \theta}{dt^2} + \frac{\eta}{m}\frac{d \theta}{dt} + \frac{g}{l}\theta  = \frac{\omega^2}{l}x_0sin\,\omega t - \frac{\eta}{m}x_0cos\,\omega t 
 \end{align*}
 
 \subsection{} % Exercise 1.4
