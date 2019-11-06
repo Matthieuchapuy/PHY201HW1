@@ -73,11 +73,12 @@ By inserting this into the equation above, we get:
 \begin{align*}
 	\omega^2\Theta e^{i \omega t} - i\frac{\eta \omega}{m}\Theta e^{i \omega t} - \frac{g}{l}\Theta e^{i \omega t} = i\frac{\omega^2}{l}x_0e^{i \omega t}
 \end{align*}
-We therfore get
+We therefore get
 \begin{align*}
-	\Theta &= \frac{i \frac{\omega^2}{l}x_0}{-\omega^2 - i\frac{\eta \omega}{m} - \frac{g}{l}}
+	\Theta &= \frac{i \frac{\omega^2}{l}x_0}{-\omega^2 - i\frac{\eta \omega}{m} - \frac{g}{l}}\\
 	&=
 \end{align*}
+
 \subsection{} % Exercise 1.5
 
 
@@ -88,20 +89,35 @@ We therfore get
 
 \subsection{} % Exercise 2.1
 
-
+In order to use $z_1$ as a generalised coordinate for the system, we would have to be able to derive$u_2$ from it. However, since the two masses are connected by an inextensible filament of length $l$ and placed on a rigid surface, this is in fact the case. Specifically:
+\begin{align*}
+	u_2 = l - z_1
+\end{align*}
 
 \subsection{} % Exercise 2.2
 
-
+\begin{align*}
+	\mathcal{L} &= E_{K} - E_P\\
+	\mathcal{L}(z,\dot{z},t) &= \frac{1}{2}(m_1+m_2)\dot{z}^2 - g(m_1z + m_2(l-z)sin\,\alpha)\\
+	&= \frac{1}{2}(m_1+m_2)\dot{z}^2 - (m_1 - m_2sin\,\alpha)g z - m_2 l sin(\alpha)
+\end{align*}
 
 \subsection{} % Exercise 2.3
 
-
+We consider the Euler-Lagrange equation:
+\begin{align*}
+	\frac{\partial \mathcal{L}}{\partial z} &= \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{z}}\\
+	 (m_1 - m_2sin\,\alpha)g &= \frac{d}{dt}(m_1 + m_2)\dot{z}\\
+	 (m_1 - m_2sin\,\alpha)g &= (m_1 + m_2)\ddot{z}
+\end{align*}
 
 \subsection{} % Exercise 2.4
 
-
-
+From the Euler-Lagrange equation gives us that:
+\begin{align*}
+	\ddot{z} = \frac{ m_1g - m_2gsin\,\alpha}{m_1 + m_2}
+\end{align*}
+In order to have equilibrium, we need $\ddot{z} = 0$. This can only be obtianed if $m_2sin\,\alpha = m_1$. Since $sin\,\alpha \leq 1$, This is possible if $m_2 > m_1$ but impossible if $m_2 < m_1$.
 
 \section{Suspended Bar}
 
